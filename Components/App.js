@@ -25,7 +25,7 @@ class App extends Component {
         dom.insertBefore(headerDOM, main);
         main.appendChild(tableDOM);
         tableDOM.appendChild(tableHeadDOM);
-        tableHeadDOM.appendChild(tableRowDOM);
+        tableDOM.appendChild(tableRowDOM);
         return dom;
     }
 

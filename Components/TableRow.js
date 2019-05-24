@@ -5,6 +5,8 @@ class TableRow extends Component {
         return /*html*/ `
             <tr>
                 <td>A</td>
+                <td>B</td>
+                <td>C</td>
             </tr>
         `;
     }
