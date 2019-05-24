@@ -1,4 +1,3 @@
-
 const contacts = [
     {
         '_id': '5c75a7b05ef279a15486ff42',
@@ -753,3 +752,5 @@ const contacts = [
         'favoriteFruit': 'banana'
     }
 ];
+
+export default contacts;
