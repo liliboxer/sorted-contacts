@@ -1,8 +1,9 @@
 import Component from './Component.js';
 import Header from './Header.js';
 import Table from './Table.js';
-import TableHead from './TableHead.js';
-import TableRow from './TableRow.js';
+import contacts from '../js/contacts-data.js';
+import Sort from './Sort.js';
+import sortContacts from '../js/sorts-contacts.js';
 
 class App extends Component {
     render() {
@@ -11,21 +12,22 @@ class App extends Component {
         const header = new Header();
         const headerDOM = header.render();
 
-        const table = new Table();
+        const main = dom.querySelector('main');
+        dom.insertBefore(headerDOM, main);
+        
+        const sort = new Sort({
+            onSort: sortOptions => {
+                const sorted = sortContacts(contacts, sortOptions);
+                table.update({ contacts: sorted });
+            }
+        });
+
+        main.appendChild(sort.render());
+        const table = new Table({ contacts });
         const tableDOM = table.render();
 
-        const tableHead = new TableHead();
-        const tableHeadDOM = tableHead.render();
-
-        const tableRow = new TableRow();
-        const tableRowDOM = tableRow.render();
-
-        const main = dom.querySelector('main');
-        
-        dom.insertBefore(headerDOM, main);
         main.appendChild(tableDOM);
-        tableDOM.appendChild(tableHeadDOM);
-        tableDOM.appendChild(tableRowDOM);
+        
         return dom;
     }
 
@@ -33,7 +35,6 @@ class App extends Component {
         return /*html*/ `
             <div>
                 <main>
-                
                 </main>
             </div>
         `;
