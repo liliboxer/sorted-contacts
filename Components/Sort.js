@@ -12,13 +12,8 @@ class Sort extends Component {
                 property: formData.get('property'),
                 direction: parseInt(formData.get('direction'))
             };
-            console.log('formData', formData);
-
 
             this.props.onSort(sortOptions);
-
-
-            console.log('props', this.props.onSort(sortOptions));
         });
 
         return form;
@@ -26,24 +21,22 @@ class Sort extends Component {
 
     renderTemplate() {
         return /*html*/ `
-            <section>
-                <form>
-                    <label>
-                        Sort By:
-                        <select name="property">
-                            <option value="lastName">Last Name</option>
-                            <option value="eyeColor">Eye Color</option>
-                        </select>
-                    </label>
-                        Direction:
-                        <select name="direction">
-                            <option value="1">Ascending</option>
-                            <option value="-1">Descending</option>
-                        </select>
-                    <label>
-                    </label>
-                </form>
-            </section>
+            <form>
+                <label>
+                    Sort By:
+                    <select name="property">
+                        <option value="lastName">Last Name</option>
+                        <option value="eyeColor">Eye Color</option>
+                    </select>
+                </label>
+                    Direction:
+                    <select name="direction">
+                        <option value="1">Ascending</option>
+                        <option value="-1">Descending</option>
+                    </select>
+                <label>
+                </label>
+            </form>
         `;
     }
 }
