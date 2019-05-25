@@ -14,6 +14,8 @@ class TableRow extends Component {
                 <td>${contact.lastName}</td>
                 <td>${contact.company}</td>
                 <td>${contact.eyeColor}</td>
+                <td>${contact.age}</td>
+                <td>${contact.favoriteFruit}</td>
             </tr>
         `;
     }
